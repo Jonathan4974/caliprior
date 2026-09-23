@@ -1,0 +1,112 @@
+{
+  "n_seq": 10,
+  "auroc_window20": 0.625,
+  "auroc_boot_mean": 0.6254501003650219,
+  "auroc_boot_ci95": [
+    0.16666666666666666,
+    1.0
+  ],
+  "auroc_loo_min": 0.5,
+  "auroc_loo_max": 0.7777777777777778,
+  "loo": {
+    "freiburg1_xyz": 0.7,
+    "freiburg1_desk": 0.6111111111111112,
+    "freiburg2_xyz": 0.55,
+    "freiburg2_desk": 0.7,
+    "freiburg3_long_office_household": 0.5,
+    "MH_01_easy": 0.6,
+    "V1_02_medium": 0.6,
+    "MH_02_easy": 0.6,
+    "V1_01_easy": 0.6111111111111112,
+    "V2_01_easy": 0.7777777777777778
+  },
+  "window_sweep": {
+    "5": {
+      "auroc": 0.7083333333333334,
+      "mean_logstd": 0.09449694826803372
+    },
+    "10": {
+      "auroc": 0.625,
+      "mean_logstd": 0.18767482662387872
+    },
+    "15": {
+      "auroc": 0.625,
+      "mean_logstd": 0.1917320563923422
+    },
+    "20": {
+      "auroc": 0.625,
+      "mean_logstd": 0.19318615110267134
+    },
+    "30": {
+      "auroc": 0.625,
+      "mean_logstd": 0.18829448178498054
+    },
+    "40": {
+      "auroc": 0.625,
+      "mean_logstd": 0.18568790954675377
+    },
+    "60": {
+      "auroc": 0.625,
+      "mean_logstd": 0.186049142092702
+    },
+    "100": {
+      "auroc": 0.625,
+      "mean_logstd": 0.185676591956509
+    }
+  },
+  "fixed_budget_n": 11,
+  "auroc_fixed_budget": 0.625,
+  "spearman_logstd_vs_n": -0.21212121212121213,
+  "per_seq": {
+    "freiburg1_xyz": {
+      "n": 33,
+      "log_std": 0.05732657657048565,
+      "label_a": 1
+    },
+    "freiburg1_desk": {
+      "n": 46,
+      "log_std": 0.06743368305634154,
+      "label_a": 0
+    },
+    "freiburg2_xyz": {
+      "n": 11,
+      "log_std": 0.4430414350741729,
+      "label_a": 1
+    },
+    "freiburg2_desk": {
+      "n": 14,
+      "log_std": 0.030609914589298088,
+      "label_a": 1
+    },
+    "freiburg3_long_office_household": {
+      "n": 15,
+      "log_std": 0.023650287339469212,
+      "label_a": 0
+    },
+    "MH_01_easy": {
+      "n": 54,
+      "log_std": 0.24255177581790743,
+      "label_a": 1
+    },
+    "V1_02_medium": {
+      "n": 45,
+      "log_std": 0.34544251165448825,
+      "label_a": 1
+    },
+    "MH_02_easy": {
+      "n": 63,
+      "log_std": 0.21211118542108834,
+      "label_a": 1
+    },
+    "V1_01_easy": {
+      "n": 14,
+      "log_std": 0.14388518602049757,
+      "label_a": 0
+    },
+    "V2_01_easy": {
+      "n": 11,
+      "log_std": 0.3658089554829643,
+      "label_a": 0
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "n_seq": 10,
+  "auroc_window20": 0.6,
+  "auroc_boot_mean": 0.6040191551141261,
+  "auroc_boot_ci95": [
+    0.16,
+    1.0
+  ],
+  "auroc_loo_min": 0.5,
+  "auroc_loo_max": 0.7,
+  "loo": {
+    "freiburg1_xyz": 0.5,
+    "freiburg1_desk": 0.65,
+    "freiburg2_xyz": 0.7,
+    "freiburg2_desk": 0.5,
+    "freiburg3_long_office_household": 0.65,
+    "MH_01_easy": 0.6,
+    "V1_02_medium": 0.5,
+    "MH_02_easy": 0.6,
+    "V1_01_easy": 0.6,
+    "V2_01_easy": 0.7
+  },
+  "window_sweep": {
+    "5": {
+      "auroc": 0.72,
+      "mean_logstd": 0.0591330999108838
+    },
+    "10": {
+      "auroc": 0.56,
+      "mean_logstd": 0.20022237376896196
+    },
+    "15": {
+      "auroc": 0.6,
+      "mean_logstd": 0.2108017942339615
+    },
+    "20": {
+      "auroc": 0.6,
+      "mean_logstd": 0.21175604600795492
+    },
+    "30": {
+      "auroc": 0.6,
+      "mean_logstd": 0.20674837907021432
+    },
+    "40": {
+      "auroc": 0.6,
+      "mean_logstd": 0.20014433710417195
+    },
+    "60": {
+      "auroc": 0.6,
+      "mean_logstd": 0.19951441998096303
+    },
+    "100": {
+      "auroc": 0.6,
+      "mean_logstd": 0.19932572074656912
+    }
+  },
+  "fixed_budget_n": 11,
+  "auroc_fixed_budget": 0.6,
+  "spearman_logstd_vs_n": -0.06666666666666667,
+  "per_seq": {
+    "freiburg1_xyz": {
+      "n": 33,
+      "log_std": 0.018296970469192524,
+      "label_a": 0
+    },
+    "freiburg1_desk": {
+      "n": 46,
+      "log_std": 0.04031369727460345,
+      "label_a": 1
+    },
+    "freiburg2_xyz": {
+      "n": 11,
+      "log_std": 0.4513969631328869,
+      "label_a": 0
+    },
+    "freiburg2_desk": {
+      "n": 14,
+      "log_std": 0.011918250291171573,
+      "label_a": 0
+    },
+    "freiburg3_long_office_household": {
+      "n": 15,
+      "log_std": 0.03729929204184631,
+      "label_a": 1
+    },
+    "MH_01_easy": {
+      "n": 54,
+      "log_std": 0.20711015364030363,
+      "label_a": 1
+    },
+    "V1_02_medium": {
+      "n": 45,
+      "log_std": 0.6228052902866887,
+      "label_a": 1
+    },
+    "MH_02_easy": {
+      "n": 63,
+      "log_std": 0.21397685173498898,
+      "label_a": 1
+    },
+    "V1_01_easy": {
+      "n": 14,
+      "log_std": 0.11285500544283193,
+      "label_a": 0
+    },
+    "V2_01_easy": {
+      "n": 11,
+      "log_std": 0.40158798576503546,
+      "label_a": 0
+    }
+  }
+}

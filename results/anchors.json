@@ -1,0 +1,52 @@
+{
+  "freiburg1_desk": {
+    "anchor_mean": 1.1634671688079834,
+    "n_frames": 15,
+    "modality": "rgbd"
+  },
+  "freiburg1_xyz": {
+    "anchor_mean": 1.1277628978093466,
+    "n_frames": 15,
+    "modality": "rgbd"
+  },
+  "freiburg2_xyz": {
+    "anchor_mean": 1.3299202601114908,
+    "n_frames": 15,
+    "modality": "rgbd"
+  },
+  "freiburg2_desk": {
+    "anchor_mean": 1.6990556716918945,
+    "n_frames": 15,
+    "modality": "rgbd"
+  },
+  "freiburg3_long_office_household": {
+    "anchor_mean": 2.53218674659729,
+    "n_frames": 15,
+    "modality": "rgbd"
+  },
+  "MH_01_easy": {
+    "anchor_mean": 2.2750203016310606,
+    "n_frames": 12,
+    "modality": "stereo"
+  },
+  "MH_02_easy": {
+    "anchor_mean": 3.247714977398752,
+    "n_frames": 12,
+    "modality": "stereo"
+  },
+  "V1_01_easy": {
+    "anchor_mean": 2.216353227601434,
+    "n_frames": 12,
+    "modality": "stereo"
+  },
+  "V1_02_medium": {
+    "anchor_mean": 2.695922882284718,
+    "n_frames": 12,
+    "modality": "stereo"
+  },
+  "V2_01_easy": {
+    "anchor_mean": 3.413555479986103,
+    "n_frames": 12,
+    "modality": "stereo"
+  }
+}

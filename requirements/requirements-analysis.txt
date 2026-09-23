@@ -1,0 +1,7 @@
+# CPU virtualenv for cache building and analysis (no CUDA needed).
+#   python -m venv .venv && . .venv/bin/activate
+#   pip install -r requirements/requirements-analysis.txt
+numpy>=1.24
+opencv-python>=4.8
+matplotlib>=3.7
+pyyaml>=6.0

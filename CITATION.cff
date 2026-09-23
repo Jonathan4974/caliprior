@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the associated paper."
+title: "CaliPrior: code and evidence release for 'What Metric Scale Can a Frozen Foundation-Model Depth Prior Give Monocular SLAM?'"
+version: 1.0.0
+date-released: "2026-01-01"
+license: BSD-3-Clause
+type: software
+repository-code: "<REPOSITORY URL>"
+authors:
+  - family-names: "<AUTHOR SURNAME>"
+    given-names: "<AUTHOR GIVEN NAME>"
+    affiliation: "<AUTHOR AFFILIATION>"
+    email: "<AUTHOR EMAIL>"
+    orcid: "https://orcid.org/<ORCID>"
+  - family-names: "<COAUTHOR SURNAME>"
+    given-names: "<COAUTHOR GIVEN NAME>"
+    affiliation: "<COAUTHOR AFFILIATION>"
+    email: "<COAUTHOR EMAIL>"
+preferred-citation:
+  type: article
+  title: "What Metric Scale Can a Frozen Foundation-Model Depth Prior Give Monocular SLAM?"
+  authors:
+    - family-names: "<AUTHOR SURNAME>"
+      given-names: "<AUTHOR GIVEN NAME>"
+    - family-names: "<COAUTHOR SURNAME>"
+      given-names: "<COAUTHOR GIVEN NAME>"
+  journal: "IEEE Robotics and Automation Letters"
+  year: 2026
+  doi: "<DOI>"

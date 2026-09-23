@@ -1,0 +1,244 @@
+% CaliPrior (SLAM part) bibliography.
+%
+% Entries are drawn from two sources:
+%   (1) reusable entries already curated in paper_cvpr2027/main.bib;
+%   (2) CaliPrior-specific fences, resolved against arXiv/Crossref during the
+%       RA-L reference pass (2026-09-17).
+% Every entry below has had its author list / venue confirmed from a primary
+% index.
+
+@String(PAMI = {IEEE Trans. Pattern Anal. Mach. Intell.})
+@String(IJRR = {Int. J. Robotics Research})
+@String(CVPR  = {IEEE Conf. Comput. Vis. Pattern Recog.})
+@String(IROS  = {IEEE/RSJ Int. Conf. Intell. Robots Syst.})
+@String(TRO   = {IEEE Trans. Robotics})
+
+% ---------------------------------------------------------------------------
+% Reusable entries (from paper_cvpr2027/main.bib)
+% ---------------------------------------------------------------------------
+
+@article{vggt,
+  author    = {Jianyuan Wang and Minghao Chen and Nikita Karaev and Andrea Vedaldi and Christian Rupprecht and Despoina Paschalidou},
+  title     = {VGGT: Visual Geometry Grounded Transformer},
+  journal   = {arXiv preprint arXiv:2503.11651},
+  year      = {2025}
+}
+
+@article{da3,
+  author    = {Lihe Yang and Bingyi Kang and Zilong Huang and Xu Zhao and Kai Zhao and Hengshuang Zhao and et al.},
+  title     = {Depth Anything 3},
+  journal   = {arXiv preprint arXiv:2504.11310},
+  year      = {2025}
+}
+
+@article{vggtslam,
+  author    = {Dominic Maggio and Hyungtae Lim and Luca Carlone},
+  title     = {VGGT-SLAM: Dense RGB SLAM Optimized on the SL(4) Manifold},
+  journal   = {arXiv preprint arXiv:2505.12549},
+  year      = {2025}
+}
+
+@article{kitti,
+  author    = {Andreas Geiger and Philip Lenz and Raquel Urtasun},
+  title     = {Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite},
+  journal   = {CVPR},
+  year      = {2012}
+}
+
+@inproceedings{euroc,
+  author    = {Michael Burri and Janosch Nikolic and Pascal Gohl and Thomas Schneider and Joern Rehder and Sammy Omari and Markus W. Achtelik and Roland Siegwart},
+  title     = {The EuRoC micro aerial vehicle datasets},
+  booktitle = {Int. J. Robotics Research},
+  year      = {2016}
+}
+
+@inproceedings{tumrgbd,
+  author    = {J{\"u}rgen Sturm and Nikolas Engelhard and Felix Endres and Wolfram Burgard and Daniel Cremers},
+  title     = {A Benchmark for the Evaluation of RGB-D SLAM Systems},
+  booktitle = {IROS},
+  year      = {2012}
+}
+
+% ---------------------------------------------------------------------------
+% CaliPrior fences
+% ---------------------------------------------------------------------------
+
+@article{depthanythingv2,
+  author    = {Lihe Yang and Bingyi Kang and Zilong Huang and Xiaogang Wang and Jiashi Feng and Hengshuang Zhao},
+  title     = {Depth Anything V2},
+  journal   = {arXiv preprint arXiv:2406.09414},
+  year      = {2024}
+}
+
+@article{mapanything,
+  author    = {Nikhil Keetha and Norman M{\"u}ller and Johannes Sch{\"o}nberger and Lorenzo Porzi and Yuchen Zhang and Tobias Fischer and Arno Knapitsch and Duncan Zauss and Ethan Weber and Nelson Antunes and Jonathon Luiten and Manuel Lopez-Antequera and Samuel Rota Bul{\`o} and Christian Richardt and Deva Ramanan and Sebastian Scherer and Peter Kontschieder},
+  title     = {MapAnything: Universal Feed-Forward Metric 3D Reconstruction},
+  journal   = {arXiv preprint arXiv:2509.13414},
+  year      = {2025},
+  annote    = {3DV 2026; frozen teacher}
+}
+
+@article{hislam2,
+  author    = {Wei Zhang and Qing Cheng and David Skuddis and Niclas Zeller and Daniel Cremers and Norbert Haala},
+  title     = {HI-SLAM2: Geometry-Aware Gaussian SLAM for Fast Monocular Scene Reconstruction},
+  journal   = {IEEE Trans. Robotics},
+  year      = {2025},
+  doi       = {10.1109/TRO.2025.3626627},
+  annote    = {SLAM vehicle}
+}
+
+@article{scalix,
+  author    = {Sebastian Barbas Laina and Tianyi Zhang and Panagiotis Petropoulakis and Simon Schaefer and Simon Boche and Jaehyung Jung and Cedric Le Gentil and Stefan Leutenegger},
+  title     = {Scalix: Uncertainty-Aware Scale-Consistent Monocular SLAM},
+  journal   = {arXiv preprint arXiv:2608.17553},
+  year      = {2026},
+  annote    = {primary fence; per-pixel depth + per-frame scale uncertainty as independent measurements}
+}
+
+@article{cf2slam,
+  author    = {Xiangqin Chen},
+  title     = {CF2-SLAM: Conformal-Calibrated Foundation-Factor Graph SLAM across Modalities and Domains},
+  journal   = {Computers, Materials \& Continua},
+  year      = {2026},
+  doi       = {10.32604/cmc.2026.079663},
+  annote    = {conformal-rescale neighbor}
+}
+
+@article{prismslam,
+  author    = {Eunsoo Im and Gyeonggwan Lee and Seunghwan Hong and Junghun Suh},
+  title     = {PRISM-SLAM: Probabilistic Ray-Grounded Inference for Scale-aware Metric SLAM},
+  journal   = {arXiv preprint arXiv:2605.19257},
+  year      = {2026},
+  annote    = {Fisher-identifiability and epistemic-uncertainty gating neighbor}
+}
+
+@article{vggtslam2,
+  author    = {Dominic Maggio and Luca Carlone},
+  title     = {VGGT-SLAM 2.0: Real-time Dense Feed-forward Scene Reconstruction},
+  journal   = {arXiv preprint arXiv:2601.19887},
+  year      = {2026},
+  annote    = {attention-gate loop-verification neighbor}
+}
+
+@article{macvo,
+  author    = {Yuheng Qiu and Yutian Chen and Zihao Zhang and Wenshan Wang and Sebastian Scherer},
+  title     = {MAC-VO: Metrics-aware Covariance for Learning-based Stereo Visual Odometry},
+  journal   = {arXiv preprint arXiv:2409.09479},
+  year      = {2024},
+  annote    = {learned-covariance precedent}
+}
+
+@article{d3vo,
+  author    = {Nan Yang and Lukas von Stumberg and Rui Wang and Daniel Cremers},
+  title     = {D3VO: Deep Depth, Deep Pose and Deep Uncertainty for Monocular Visual Odometry},
+  journal   = {CVPR},
+  year      = {2020}
+}
+
+@article{hdvio2,
+  author    = {Giovanni Cioffi and Leonard Bauersfeld and Davide Scaramuzza},
+  title     = {HDVIO2.0: Wind and Disturbance Estimation with Hybrid Dynamics VIO},
+  journal   = {arXiv preprint arXiv:2504.00969},
+  year      = {2025},
+  annote    = {T-RO 2025; motion-prior factor fence}
+}
+
+@article{okawara,
+  author    = {Taku Okawara and Kenji Koide and Shuji Oishi and Masashi Yokozuka and Atsuhiko Banno and Kentaro Uno and Kazuya Yoshida},
+  title     = {Tightly-Coupled LiDAR-IMU-Wheel Odometry with an Online Neural Kinematic Model Learning via Factor Graph Optimization},
+  journal   = {Robotics and Autonomous Systems},
+  year      = {2025},
+  doi       = {10.1016/j.robot.2025.104929},
+  annote    = {online-learned kinematic model fence}
+}
+
+@article{hailu,
+  author    = {Hadush Hailu and Bruk Gebregziabher and Siddhartha Gudipudi and Manoj Bhatta},
+  title     = {Quantifying Motion Excitation for Metric Scale Observability in Monocular Visual-Inertial Odometry},
+  journal   = {arXiv preprint arXiv:2603.26740},
+  year      = {2026},
+  annote    = {per-regime VIO scale-observability fence (IMU makes scale observable)}
+}
+
+@article{merrill,
+  author    = {Nathaniel Merrill and Patrick Geneva and Saimouli Katragadda and Chuchu Chen and Guoquan Huang},
+  title     = {Fast and robust learned single-view depth-aided monocular visual-inertial initialization},
+  journal   = {Int. J. Robotics Research},
+  volume    = {44},
+  number    = {10-11},
+  pages     = {1619--1647},
+  year      = {2025},
+  doi       = {10.1177/02783649241262452},
+  annote    = {VIO init: models scale+bias of the learned depth map, but IMU makes scale observable; does not preempt the pure-monocular gauge null}
+}
+
+@article{mehra,
+  author    = {Raman K. Mehra},
+  title     = {On the Identification of Variances and Adaptive Kalman Filtering},
+  journal   = {IEEE Trans. Automatic Control},
+  volume    = {15},
+  number    = {2},
+  pages     = {175--184},
+  year      = {1970},
+  doi       = {10.1109/TAC.1970.1099422},
+  annote    = {classical adaptive-filtering fence}
+}
+
+% ---------------------------------------------------------------------------
+% Opportunistic metric sensing (the anchor's use case), verified 2026-09-19
+% ---------------------------------------------------------------------------
+
+@article{sinopoli2004,
+  author    = {Bruno Sinopoli and Luca Schenato and Massimo Franceschetti and Kameshwar Poolla and Shankar S. Sastry and Michael I. Jordan},
+  title     = {Kalman Filtering With Intermittent Observations},
+  journal   = {IEEE Trans. Automatic Control},
+  volume    = {49},
+  number    = {9},
+  pages     = {1453--1464},
+  year      = {2004},
+  doi       = {10.1109/TAC.2004.834121},
+  annote    = {episodic-measurement fusion}
+}
+
+@inproceedings{olson2011,
+  author    = {Edwin Olson},
+  title     = {AprilTag: A robust and flexible visual fiducial system},
+  booktitle = {IEEE Int. Conf. Robotics and Automation (ICRA)},
+  pages     = {3400--3407},
+  year      = {2011},
+  doi       = {10.1109/ICRA.2011.5979561},
+  annote    = {docking-station fiducial check}
+}
+
+@article{murartal2017,
+  author    = {Raul Mur-Artal and Juan D. Tard{\'o}s},
+  title     = {ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras},
+  journal   = {IEEE Trans. Robotics},
+  volume    = {33},
+  number    = {5},
+  pages     = {1255--1262},
+  year      = {2017},
+  doi       = {10.1109/TRO.2017.2705103},
+  annote    = {mono/stereo/RGB-D modality switch}
+}
+
+@inproceedings{wu2017vins,
+  author    = {Kejian J. Wu and Chao X. Guo and Georgios Georgiou and Stergios I. Roumeliotis},
+  title     = {VINS on wheels},
+  booktitle = {IEEE Int. Conf. Robotics and Automation (ICRA)},
+  pages     = {5155--5162},
+  year      = {2017},
+  doi       = {10.1109/ICRA.2017.7989603},
+  annote    = {GNSS-aided metric fusion}
+}
+
+@article{yang2022sonar,
+  author    = {Disai Yang and Haiping Ai and Jiantao Liu and Bingwei He},
+  title     = {Absolute scale estimation for underwater monocular visual odometry based on 2-D imaging sonar},
+  journal   = {Measurement},
+  volume    = {190},
+  pages     = {110665},
+  year      = {2022},
+  doi       = {10.1016/j.measurement.2021.110665},
+  annote    = {auxiliary range sensor recovers monocular scale}
+}

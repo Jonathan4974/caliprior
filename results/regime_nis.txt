@@ -1,0 +1,42 @@
+============================================================================================
+E2 sigma-regime — temporal hold-out (median aggregate NIS; target 1.0)
+============================================================================================
+sequence               const      frozen      scalar    regimeK2    regimeK3    regimeK4
+freiburg1_xyz            nan       0.477       1.380       1.501       1.315       1.306
+freiburg1_desk           nan       0.074       0.469       0.842       0.707       0.783
+MH_01_easy               nan       0.021       0.033         nan       0.504         nan
+V1_02_medium             nan       0.082       0.025       0.040       0.615         nan
+
+|median held-out NIS - 1| (lower better)   [mean / divergence-frac]
+sequence               const      frozen      scalar    regimeK2    regimeK3    regimeK4
+freiburg1_xyz              -        0.52        0.38        0.50        0.31        0.31
+freiburg1_desk             -        0.93        0.53        0.16        0.29        0.22
+MH_01_easy                 -        0.98        0.97           -        0.50           -
+V1_02_medium               -        0.92        0.98        0.96        0.38           -
+  freiburg1_xyz  scalar mean=1.36 div=0.00 | regimeK3 mean=1.32 div=0.00
+  freiburg1_desk scalar mean=31 div=0.04 | regimeK3 mean=0.686 div=0.00
+  MH_01_easy     scalar mean=1.14 div=0.02 | regimeK3 mean=2.5e+03 div=0.11
+  V1_02_medium   scalar mean=2.77 div=0.02 | regimeK3 mean=36.3 div=0.05
+
+per-regime median held-out NIS (each should be ~1)
+sequence                             scalar                   regimeK3
+freiburg1_xyz         [0.598, 1.998, 2.781]      [1.332, 1.341, 1.241]
+freiburg1_desk        [0.115, 0.371, 1.054]      [0.502, 0.361, 0.672]
+MH_01_easy            [0.005, 0.005, 0.042]      [0.044, 0.067, 0.669]
+V1_02_medium          [0.006, 0.005, 0.025]      [0.158, 0.171, 0.643]
+
+pre-registered verdict (median estimator)
+  H1 (regime closer to 1 on >=2/3 shifted): 3/3 -> PASS
+  H2 (spread reduced, as pre-registered):   2 -> PASS  [known-bad statistic]
+  H2' (mean |NIS_k-1| reduced, corrected):  4 -> PASS
+  => per-regime SUPPORTED (H1 and corrected H2')
+
+============================================================================================
+cross-sequence transfer (fit TUM -> apply frozen to EuRoC)
+============================================================================================
+MH_01_easy       scalarT      median held-out NIS=0.031 c=0.3351259989242916 c_regime=[1.0, 1.0, 1.0]
+MH_01_easy       regimeK3T    median held-out NIS=0.091 c=1.0 c_regime=[0.15263019128713207, 0.5051802397785106, 0.757962225671472]
+V1_02_medium     scalarT      median held-out NIS=0.065 c=0.3351259989242916 c_regime=[1.0, 1.0, 1.0]
+V1_02_medium     regimeK3T    median held-out NIS=0.073 c=1.0 c_regime=[0.15263019128713207, 0.5051802397785106, 0.757962225671472]
+
+wrote ${PROJECT_ROOT}/outputs/regime_nis.png

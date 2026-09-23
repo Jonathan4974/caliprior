@@ -1,0 +1,37 @@
+# NOTICE
+
+This release (the CaliPrior analysis and experiment scripts, documentation,
+figures, and paper sources) is distributed under the BSD 3-Clause License in
+`LICENSE`.
+
+It builds on and depends on third-party software that is **not** bundled here.
+If you redistribute a derived package, retain the notices below and comply with
+each upstream license.
+
+## HI-SLAM2 (SLAM backend)
+
+- Source: https://github.com/Willyzw/HI-SLAM2
+- Pinned commit: `76c833c`
+- License: BSD 3-Clause, Copyright (c) 2021 Princeton Vision & Learning Lab
+- Usage: the scripts in `code/` import `hi2`, `depth_video`, `lietorch`,
+  `droid_backends`, and `geom.*` from a local checkout of HI-SLAM2
+  (`HISLAM2_ROOT`). No HI-SLAM2 source is redistributed in this release.
+
+## Foundation-model depth priors
+
+The cache builders download model weights at run time; no weights are
+redistributed here.
+
+- MapAnything (`facebook/map-anything-apache`) - Apache-2.0. Used by
+  `code/build_ma_cache.py`.
+- Depth Anything V2 - used by `code/build_dav2_cache.py` via
+  `transformers.AutoModelForDepthEstimation`.
+- Depth Anything 3 - used by `code/build_da3m_cache.py` via
+  `depth_anything_3`.
+
+Verify the current license of each model before redistribution.
+
+## Datasets
+
+TUM RGB-D, EuRoC MAV, and KITTI odometry are downloaded separately and are
+governed by their own terms. No dataset content is redistributed here.

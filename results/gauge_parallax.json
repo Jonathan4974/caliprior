@@ -1,0 +1,53 @@
+{
+  "lambda": 1.1,
+  "rows": [
+    {
+      "baseline": 0.0,
+      "parallax_rad": 0.0,
+      "depth_only_delta_px": 2.2737367544323206e-13
+    },
+    {
+      "baseline": 0.0001,
+      "parallax_rad": 2.3495304001292883e-05,
+      "depth_only_delta_px": 0.007475949001900517
+    },
+    {
+      "baseline": 0.001,
+      "parallax_rad": 0.00023495303573279713,
+      "depth_only_delta_px": 0.07471219012387564
+    },
+    {
+      "baseline": 0.01,
+      "parallax_rad": 0.0023495260772104557,
+      "depth_only_delta_px": 0.7424165182196134
+    },
+    {
+      "baseline": 0.03,
+      "parallax_rad": 0.007048474474296256,
+      "depth_only_delta_px": 2.1963542045457416
+    },
+    {
+      "baseline": 0.1,
+      "parallax_rad": 0.023490982071537905,
+      "depth_only_delta_px": 6.977127457046777
+    },
+    {
+      "baseline": 0.3,
+      "parallax_rad": 0.07036952788839429,
+      "depth_only_delta_px": 18.378561571442162
+    },
+    {
+      "baseline": 1.0,
+      "parallax_rad": 0.23076745763319118,
+      "depth_only_delta_px": 42.06835939430641
+    },
+    {
+      "baseline": 3.0,
+      "parallax_rad": 0.6139796797485626,
+      "depth_only_delta_px": 57.216479291315636
+    }
+  ],
+  "zero_baseline_delta_px": 2.2737367544323206e-13,
+  "baseline_075_delta_px": 33.60771731471204,
+  "monotone_increasing": true
+}

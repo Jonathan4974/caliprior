@@ -1,0 +1,49 @@
+% RA-L FINAL (camera-ready) build (IEEEtran journal format).
+% IEEEtran journal format, US Letter, twoside. Do NOT use for initial submission.
+\documentclass[letterpaper, 10pt, journal, twoside]{IEEEtran}
+
+% \overrideIEEEmargins   % commented for the final RAL version
+
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+\graphicspath{{figures/}}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{What Metric Scale Can a Frozen Foundation-Model Depth Prior Give Monocular SLAM?}
+
+\markboth{IEEE Robotics and Automation Letters. Preprint Version. Accepted Month, Year}%
+{Author \MakeLowercase{\textit{et al.}}: What Metric Scale Can a Frozen Depth Prior Give Monocular SLAM?}
+
+\author{First A. Author$^{1}$, Second B. Author$^{2}$, and Third C. Author$^{1}$%
+\thanks{Manuscript received: Month Day, Year; Revised: Month Day, Year; Accepted: Month Day, Year.}%
+\thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments. This work was supported by (organizations/grants that supported the work).}%
+\thanks{$^{1}$First A. Author and Third C. Author are with School of Engineering, Robotics Department, University of Somewhere, Someland {\tt\footnotesize author@example.edu}}%
+\thanks{$^{2}$Second B. Author is with School of Engineering, Automation Department, University of Anywhere, Anyland {\tt\footnotesize author2@example.edu}}%
+\thanks{Digital Object Identifier (DOI): see top of this page.}%
+}
+
+% RA-L keywords (2-5; first two from the predefined list).
+\newcommand{\RALkeywords}{%
+\begin{IEEEkeywords}
+Foundation models for robotics, monocular SLAM, metric scale estimation, gauge freedom, trust calibration.
+\end{IEEEkeywords}}
+
+\begin{document}
+
+\maketitle
+
+\input{body}
+
+\bibliographystyle{IEEEtran}
+\bibliography{caliprior}
+
+\end{document}

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large caches and run artifacts (not tracked)
+ma_cache/
+hf_cache/
+outputs/
+logs/
+*.npz
+*.npy
+*.pth
+*.pt
+*.ckpt
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.synctex.gz
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

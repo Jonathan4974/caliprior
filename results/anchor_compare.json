@@ -1,0 +1,112 @@
+{
+  "freiburg1_xyz": {
+    "modality": "rgbd",
+    "sensor_mean_m": 1.1277628978093466,
+    "fm_scale": 0.9070530302558747,
+    "fm_err": 0.09294696974412531,
+    "depth_anchor_scale": 0.8871331594050047,
+    "depth_anchor_err": 0.1128668405949953,
+    "traj_anchor_scale": 1.0091344016889683,
+    "traj_anchor_err": 0.009134401688968286,
+    "traj_n_pairs": 23
+  },
+  "freiburg1_desk": {
+    "modality": "rgbd",
+    "sensor_mean_m": 1.1634671688079834,
+    "fm_scale": 1.0627923118365532,
+    "fm_err": 0.0627923118365532,
+    "depth_anchor_scale": 1.019873892662518,
+    "depth_anchor_err": 0.019873892662517934,
+    "traj_anchor_scale": 1.0689164782621419,
+    "traj_anchor_err": 0.06891647826214187,
+    "traj_n_pairs": 13
+  },
+  "freiburg2_xyz": {
+    "modality": "rgbd",
+    "sensor_mean_m": 1.3299202601114908,
+    "fm_scale": 0.6410220117345065,
+    "fm_err": 0.35897798826549354,
+    "depth_anchor_scale": 1.0287292102862855,
+    "depth_anchor_err": 0.0287292102862855,
+    "traj_anchor_scale": 0.9556217123914829,
+    "traj_anchor_err": 0.04437828760851714,
+    "traj_n_pairs": 18
+  },
+  "freiburg2_desk": {
+    "modality": "rgbd",
+    "sensor_mean_m": 1.6990556716918945,
+    "fm_scale": 0.8081613662409881,
+    "fm_err": 0.1918386337590119,
+    "depth_anchor_scale": 1.1775947667098627,
+    "depth_anchor_err": 0.17759476670986274,
+    "traj_anchor_scale": 1.0047506921334235,
+    "traj_anchor_err": 0.004750692133423495,
+    "traj_n_pairs": 11
+  },
+  "freiburg3_long_office_household": {
+    "modality": "rgbd",
+    "sensor_mean_m": 2.53218674659729,
+    "fm_scale": 1.0049443877764992,
+    "fm_err": 0.004944387776499193,
+    "depth_anchor_scale": 0.8941304654374476,
+    "depth_anchor_err": 0.10586953456255244,
+    "traj_anchor_scale": 1.0104013724595424,
+    "traj_anchor_err": 0.010401372459542424,
+    "traj_n_pairs": 13
+  },
+  "MH_01_easy": {
+    "modality": "stereo",
+    "sensor_mean_m": 2.2750203016310606,
+    "fm_scale": 0.1322497443874078,
+    "fm_err": 0.8677502556125922,
+    "depth_anchor_scale": 0.2964542857207395,
+    "depth_anchor_err": 0.7035457142792605,
+    "traj_anchor_scale": 0.9955912325918412,
+    "traj_anchor_err": 0.004408767408158765,
+    "traj_n_pairs": 27
+  },
+  "MH_02_easy": {
+    "modality": "stereo",
+    "sensor_mean_m": 3.247714977398752,
+    "fm_scale": 0.09721558460792261,
+    "fm_err": 0.9027844153920774,
+    "depth_anchor_scale": 0.1444834196262402,
+    "depth_anchor_err": 0.8555165803737598,
+    "traj_anchor_scale": 1.0468583993466374,
+    "traj_anchor_err": 0.04685839934663738,
+    "traj_n_pairs": 17
+  },
+  "V1_01_easy": {
+    "modality": "stereo",
+    "sensor_mean_m": 2.216353227601434,
+    "fm_scale": 1.1066782512864153,
+    "fm_err": 0.10667825128641528,
+    "depth_anchor_scale": 0.9614996367273628,
+    "depth_anchor_err": 0.03850036327263717,
+    "traj_anchor_scale": 0.9888277755952822,
+    "traj_anchor_err": 0.011172224404717768,
+    "traj_n_pairs": 11
+  },
+  "V1_02_medium": {
+    "modality": "stereo",
+    "sensor_mean_m": 2.695922882284718,
+    "fm_scale": 0.20960365183673624,
+    "fm_err": 0.7903963481632638,
+    "depth_anchor_scale": 0.1431894490349888,
+    "depth_anchor_err": 0.8568105509650112,
+    "traj_anchor_scale": 1.0127811788201166,
+    "traj_anchor_err": 0.012781178820116645,
+    "traj_n_pairs": 12
+  },
+  "V2_01_easy": {
+    "modality": "stereo",
+    "sensor_mean_m": 3.413555479986103,
+    "fm_scale": 1.2028065191127868,
+    "fm_err": 0.2028065191127868,
+    "depth_anchor_scale": 0.8439995216696458,
+    "depth_anchor_err": 0.15600047833035424,
+    "traj_anchor_scale": 1.0308869186822227,
+    "traj_anchor_err": 0.030886918682222708,
+    "traj_n_pairs": 13
+  }
+}

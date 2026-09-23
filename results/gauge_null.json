@@ -1,0 +1,13 @@
+{
+  "lambda": 3.7,
+  "n_points": 400,
+  "joint_projection_delta_max_px": 3.410605131648481e-13,
+  "depth_only_projection_delta_max_px": 215.6184104831384,
+  "rotation_perturbation_delta_max_px": 6.781185700999657,
+  "joint_residual_mean_px": 3.285813461595399e-14,
+  "depth_only_residual_mean_px": 31.733466306048378,
+  "gauge_is_null": true,
+  "depth_only_is_NOT_null": true,
+  "lemma_confirmed": true,
+  "depth_scaling_under_gauge": 3.7000000000000006
+}

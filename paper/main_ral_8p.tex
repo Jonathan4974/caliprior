@@ -1,0 +1,43 @@
+% RA-L INITIAL submission build, 8-page variant (IEEE conference format, anonymous).
+% IEEE conference format (ieeeconf.cls), US Letter, double-anonymous.
+% Expanded body in body_8p.tex; the 6-page variant is main_ral.tex.
+\documentclass[letterpaper, 10pt, conference]{ieeeconf}
+
+\overrideIEEEmargins
+
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+\graphicspath{{figures/}}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{\LARGE \bf
+What Metric Scale Can a Frozen Foundation-Model Depth Prior Give Monocular SLAM?%
+}
+
+% Double-anonymous initial submission: byline space left blank on purpose.
+\author{\vspace{2em}}
+
+% No IEEEkeywords block for the conference-format initial submission.
+\newcommand{\RALkeywords}{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\input{body_8p}
+
+\bibliographystyle{IEEEtran}
+\bibliography{caliprior}
+
+\end{document}

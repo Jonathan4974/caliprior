@@ -1,0 +1,47 @@
+{
+  "MapAnything": {
+    "n": 10,
+    "npos_at_shared": 4,
+    "auroc_shared_tau": 0.9166666666666666,
+    "auroc_best": 1.0,
+    "tau_best": 0.2,
+    "ci95": [
+      1.0,
+      1.0
+    ],
+    "loso_tau_mean": 0.215,
+    "loso_tau_std": 0.04499999999999999,
+    "loso_tau_min": 0.2,
+    "loso_tau_max": 0.35
+  },
+  "DA-V2": {
+    "n": 10,
+    "npos_at_shared": 6,
+    "auroc_shared_tau": 0.625,
+    "auroc_best": 0.875,
+    "tau_best": 0.475,
+    "ci95": [
+      0.5714285714285714,
+      1.0
+    ],
+    "loso_tau_mean": 0.4074999999999999,
+    "loso_tau_std": 0.14407029534223909,
+    "loso_tau_min": 0.25,
+    "loso_tau_max": 0.7
+  },
+  "DA3METRIC": {
+    "n": 10,
+    "npos_at_shared": 5,
+    "auroc_shared_tau": 0.6,
+    "auroc_best": 0.8095238095238095,
+    "tau_best": 0.7,
+    "ci95": [
+      0.4444444444444444,
+      1.0
+    ],
+    "loso_tau_mean": 0.655,
+    "loso_tau_std": 0.13499999999999998,
+    "loso_tau_min": 0.25,
+    "loso_tau_max": 0.7
+  }
+}
