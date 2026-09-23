@@ -13,13 +13,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import jload as jl
 P = _CP.PROJECT_ROOT
 FIG = f"{P}/outputs/figs"
 os.makedirs(FIG, exist_ok=True)
-
-
-def jl(p):
-    return json.load(open(p)) if os.path.exists(p) else {}
 
 
 def scale(seq, tag):

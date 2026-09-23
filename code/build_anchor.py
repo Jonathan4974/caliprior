@@ -16,12 +16,10 @@ import cv2
 import yaml
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import TUM5 as TUM, EUROC5 as EUROC
 P = _CP.PROJECT_ROOT
 EU = _CP.EUROC_ROOT
 TU = _CP.TUM_ROOT
-TUM = ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz", "freiburg2_desk",
-       "freiburg3_long_office_household"]
-EUROC = ["MH_01_easy", "MH_02_easy", "V1_01_easy", "V1_02_medium", "V2_01_easy"]
 
 
 def tum_anchor(seq, W=15):

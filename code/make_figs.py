@@ -5,20 +5,17 @@ Panels: (A) trust gate, MapAnything; (B) trust gate, DA-V2 (teacher-specific);
 (C) 5-arm ladder scale error; (D) trajectory anchor vs FM-only. Writes
 outputs/figs/caliprior_summary.png (+ individual panels).
 """
-import os, json
+import os
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import jload
 P = _CP.PROJECT_ROOT
 FIG = f"{P}/outputs/figs"
 os.makedirs(FIG, exist_ok=True)
-
-
-def jload(p):
-    return json.load(open(p)) if os.path.exists(p) else {}
 
 
 def gate_panel(ax, path, title):

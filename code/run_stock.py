@@ -9,7 +9,7 @@ stock Hi2 (Omnidata prior + JDSA); no prior injection here.
 Usage (inside hislam2 env, see env_setup.sh):
   python run_stock.py --seq MH_01_easy --out outputs/stock_MH_01
 """
-import os, sys, argparse, json, re
+import os, sys, argparse, json
 import numpy as np
 import cv2
 import torch
@@ -22,6 +22,7 @@ sys.path.insert(0, _CP.HISLAM2_ROOT)
 sys.path.insert(0, _CP.HISLAM2_ROOT + "/hislam2")
 from hi2 import Hi2
 import lietorch
+from caliprior_common import umeyama_ate
 
 MIRROR = _CP.EUROC_ROOT
 MIRROR_KITTI = _CP.KITTI_ROOT
@@ -38,21 +39,6 @@ def load_cam_yaml(seq):
     return np.array([fx, fy, cx, cy]), dist
 
 
-def umeyama_ate(p_est, p_gt):
-    mu_e, mu_g = p_est.mean(0), p_gt.mean(0)
-    E, G = p_est - mu_e, p_gt - mu_g
-    H = E.T @ G
-    U, S, Vt = np.linalg.svd(H)
-    d = np.sign(np.linalg.det(Vt.T @ U.T))
-    D = np.diag([1, 1, d])
-    R = Vt.T @ D @ U.T
-    s = (G * (E @ R.T)).sum() / (E ** 2).sum()
-    t = mu_g - s * (R @ mu_e)
-    p_al = s * (p_est @ R.T) + t
-    rmse = np.sqrt(((p_al - p_gt) ** 2).sum(1).mean())
-    return rmse, float(s)
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seq", default="MH_01_easy")
@@ -66,7 +52,12 @@ def main():
     ap.add_argument("--length", type=int, default=100000)
     ap.add_argument("--buffer", type=int, default=-1)
     a = ap.parse_args()
+    a.out = os.path.abspath(a.out)
+    a.config = os.path.abspath(a.config)
+    a.weights = os.path.abspath(a.weights)
     os.makedirs(a.out, exist_ok=True)
+    # HI-SLAM2 loads its Omnidata checkpoints via paths relative to its root.
+    os.chdir(_CP.HISLAM2_ROOT)
 
     dist_on, is_rgb = True, False
     K, imgdir, files, cam_ns, gt_ns, gt_p = None, None, None, None, None, None

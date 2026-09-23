@@ -17,24 +17,15 @@
 import json
 import os
 import numpy as np
-import cv2
 
-P = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(P, "outputs")
+import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import auroc
+OUT = f"{_CP.PROJECT_ROOT}/outputs"
 TEACHERS = [
     ("magic",  "gate_ood.json",       "ma_cache",   ""),
     ("dav2",   "gate_ood_dav2.json",  "dav2_cache", "dav2_"),
     ("da3m",   "gate_ood_da3m.json",  "da3m_cache", "da3m_"),
 ]
-
-
-def auroc(scores, labels):
-    scores, labels = np.asarray(scores, float), np.asarray(labels, int)
-    pos, neg = scores[labels == 1], scores[labels == 0]
-    if len(pos) == 0 or len(neg) == 0:
-        return float("nan")
-    return float((pos[:, None] > neg[None, :]).mean()
-                 + 0.5 * (pos[:, None] == neg[None, :]).mean())
 
 
 def tau_sweep(path):

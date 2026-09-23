@@ -20,7 +20,6 @@ Usage (hislam2 env, see env_setup.sh):
 """
 import os, sys, argparse, json, types
 import numpy as np
-import cv2
 import torch
 import resource
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
@@ -33,48 +32,8 @@ sys.path.insert(0, _CP.PROJECT_ROOT)
 from hi2 import Hi2
 import lietorch
 from build_ma_cache import euroc_frames, tum_frames, kitti_frames  # noqa (reuse exact preprocess)
-
-MIRROR_EUROCs = _CP.EUROC_ROOT
-MIRROR_TUM = _CP.TUM_ROOT
-MIRROR_KITTI_G = _CP.KITTI_GREY_ROOT
-
-
-def umeyama_ate(p_est, p_gt):
-    mu_e, mu_g = p_est.mean(0), p_gt.mean(0)
-    E, G = p_est - mu_e, p_gt - mu_g
-    H = E.T @ G
-    U, S, Vt = np.linalg.svd(H)
-    d = np.sign(np.linalg.det(Vt.T @ U.T))
-    R = Vt.T @ np.diag([1, 1, d]) @ U.T
-    s = (G * (E @ R.T)).sum() / (E ** 2).sum()
-    al = s * (p_est @ R.T) + (mu_g - s * (R @ mu_e))
-    return float(np.sqrt(((al - p_gt) ** 2).sum(1).mean())), float(s)
-
-
-def load_euroc_gt(seq):
-    gt = np.loadtxt(f"{MIRROR_EUROCs}/{seq}/mav0/state_groundtruth_estimate0/data.csv",
-                    delimiter=",", skiprows=1)
-    return gt[:, 0].astype(np.int64), gt[:, 1:4]
-
-
-def load_tum_gt(seq):
-    base = f"{MIRROR_TUM}/rgbd_dataset_{seq}"
-    rgb = [l.split() for l in open(f"{base}/rgb.txt") if not l.startswith("#")]
-    g = [l.split() for l in open(f"{base}/groundtruth.txt") if not l.startswith("#")]
-    gts, gtp = np.array([float(r[0]) for r in g]), np.array([[float(x) for x in r[1:4]] for r in g])
-    ts = np.array([float(r[0]) for r in rgb])
-    gi = np.searchsorted(gts, ts).clip(0, len(gts) - 1)
-    return ts, gtp[gi]
-
-
-def load_kitti_gt():
-    T = [np.eye(4) for _ in range(800)]
-    with open(f"{MIRROR_KITTI_G}/00/poses.txt") as f:
-        for i, line in enumerate(f):
-            if i >= 800:
-                break
-            T[i][:3] = np.array(line.split(), float).reshape(3, 4)
-    return np.array([t[:3, 3] for t in T])
+from caliprior_common import (umeyama_ate, load_euroc_gt, load_tum_gt,
+                              load_kitti_gt)
 
 
 def main():
@@ -149,7 +108,13 @@ def main():
                     help="N2: set the init gauge mean depth (metres) directly "
                          "from a real sensor anchor, overriding the FM's mean")
     a = ap.parse_args()
+    a.out = os.path.abspath(a.out)
+    a.cache = os.path.abspath(a.cache)
+    a.config = os.path.abspath(a.config)
+    a.weights = os.path.abspath(a.weights)
     os.makedirs(a.out, exist_ok=True)
+    # HI-SLAM2 loads its Omnidata checkpoints via paths relative to its root.
+    os.chdir(_CP.HISLAM2_ROOT)
     C = np.load(a.cache)
     depth_cache = C["depth"]
     # E1: per-pixel teacher confidence, only loaded for the conf-weighted

@@ -19,6 +19,7 @@ import numpy as np
 import cv2
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import auroc
 P = _CP.PROJECT_ROOT
 ALL = ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz", "freiburg2_desk",
        "freiburg3_long_office_household",
@@ -66,14 +67,6 @@ def scale_ma(seq, prefix):
     if not os.path.exists(f):
         return None
     return float(json.load(open(f))["umeyama_scale_est2gt"])
-
-
-def auroc(scores, labels):
-    pos, neg = scores[labels == 1], scores[labels == 0]
-    if len(pos) == 0 or len(neg) == 0:
-        return float("nan")
-    return float((pos[:, None] > neg[None, :]).mean() +
-                 0.5 * (pos[:, None] == neg[None, :]).mean())
 
 
 def main():

@@ -11,7 +11,7 @@ Three attacks a reviewer will make on AUROC 0.92 with n=10:
 
 Emits outputs/gate_robust.json (+ png). CPU only.
 """
-import os, json, argparse
+import json, argparse
 import numpy as np
 import gate_ood as G
 

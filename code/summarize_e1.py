@@ -13,8 +13,8 @@ Arms:
 import json
 import os
 
-P = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(P, "outputs")
+import caliprior_paths as _CP  # path resolution (env-overridable)
+OUT = f"{_CP.PROJECT_ROOT}/outputs"
 
 SEQS = ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz", "freiburg2_desk",
         "freiburg3_long_office_household", "MH_01_easy", "MH_02_easy",

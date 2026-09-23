@@ -17,6 +17,7 @@ import numpy as np
 import torch
 
 import build_ma_cache as bmc
+from caliprior_common import EUROC5, TUM5
 
 MID = "depth-anything/DA3METRIC-LARGE"
 
@@ -69,11 +70,10 @@ def main():
     print(f"teacher: {a.model}", flush=True)
 
     seqs = {}
-    for seq in ["MH_01_easy", "V1_02_medium", "MH_02_easy", "V1_01_easy", "V2_01_easy"]:
+    for seq in EUROC5:
         files, K, gen = bmc.euroc_frames(seq)
         seqs[seq] = (gen, len(files))
-    for seq in ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz",
-                "freiburg2_desk", "freiburg3_long_office_household"]:
+    for seq in TUM5:
         rows, K, gen = bmc.tum_frames(seq)
         seqs[seq] = (gen, len(rows))
     if a.only:

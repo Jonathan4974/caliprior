@@ -21,8 +21,7 @@ least-squares scalar mapping served prior -> current backend inverse depth.
 import torch
 import droid_backends
 
-import geom.ba as _ba
-from geom.ba import safe_scatter_add_mat, safe_scatter_add_vec, disp_retr
+from geom.ba import disp_retr
 from geom.chol import schur_solve_mono_prior
 
 STATE = {
@@ -88,10 +87,6 @@ def set_conf(slot, conf_down):
     tile aligns pixel-for-pixel with the prior residual.
     """
     STATE["conf"][int(slot)] = conf_down
-
-
-def clear_conf():
-    STATE["conf"] = {}
 
 
 def set_regime(edges, c_regime):

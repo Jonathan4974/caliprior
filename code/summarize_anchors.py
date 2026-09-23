@@ -13,10 +13,8 @@ import os, json
 import numpy as np
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import ALL10 as ALL
 P = _CP.PROJECT_ROOT
-ALL = ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz", "freiburg2_desk",
-       "freiburg3_long_office_household",
-       "MH_01_easy", "MH_02_easy", "V1_01_easy", "V1_02_medium", "V2_01_easy"]
 
 
 def main():

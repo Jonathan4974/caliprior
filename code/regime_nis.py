@@ -21,8 +21,8 @@ H2' (corrected, reported alongside) mean |NIS_k - 1| across regimes lower for
 import json, os, argparse
 import numpy as np
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "outputs")
+import caliprior_paths as _CP  # path resolution (env-overridable)
+OUT = f"{_CP.PROJECT_ROOT}/outputs"
 ARMS = ["const", "frozen", "scalar", "regimeK2", "regimeK3", "regimeK4"]
 SEQS = ["freiburg1_xyz", "freiburg1_desk", "MH_01_easy", "V1_02_medium"]
 SHIFTED = ["freiburg1_desk", "MH_01_easy", "V1_02_medium"]

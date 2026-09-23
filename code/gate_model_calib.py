@@ -15,22 +15,14 @@ estimate of tau* (fit on 9, report the held-out fold's tau*).
 import json, os, argparse
 import numpy as np
 
-P = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(P, "outputs")
+import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import auroc
+OUT = f"{_CP.PROJECT_ROOT}/outputs"
 MODELS = [("MapAnything", "gate_ood.json"),
           ("DA-V2", "gate_ood_dav2.json"),
           ("DA3METRIC", "gate_ood_da3m.json")]
 SHARED_TAU = 0.30
 TAUS = np.round(np.arange(0.05, 0.71, 0.025), 4)
-
-
-def auroc(scores, labels):
-    scores, labels = np.asarray(scores, float), np.asarray(labels, int)
-    pos, neg = scores[labels == 1], scores[labels == 0]
-    if len(pos) == 0 or len(neg) == 0:
-        return float("nan")
-    return float((pos[:, None] > neg[None, :]).mean()
-                 + 0.5 * (pos[:, None] == neg[None, :]).mean())
 
 
 def load(name):

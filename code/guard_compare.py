@@ -11,8 +11,8 @@ convergence and what it costs in calibration.
 import json, os, argparse
 import numpy as np
 
-P = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(P, "outputs")
+import caliprior_paths as _CP  # path resolution (env-overridable)
+OUT = f"{_CP.PROJECT_ROOT}/outputs"
 SEQS = ["MH_01_easy", "V1_02_medium"]
 KS = [2, 3, 4]
 

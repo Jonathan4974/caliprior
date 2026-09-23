@@ -21,12 +21,13 @@ plus manifest.json (orig size, crop offsets, dataset, chunk size).
 
 Runs in the rs3d venv: ${VENV_ROOT}/bin/python
 """
-import os, sys, json, argparse
+import os, json, argparse
 import numpy as np
 import cv2
 import torch
 
 import caliprior_paths as _CP  # path resolution (env-overridable)
+from caliprior_common import EUROC11, TUM5
 MIRROR_EUROCs = _CP.EUROC_ROOT
 MIRROR_TUM = _CP.TUM_ROOT
 MIRROR_KITTI = _CP.KITTI_ROOT
@@ -150,7 +151,6 @@ def infer_chunk(model, items, H, W):
 
 
 def build_seq(model, name, gen, n, outdir, k_scale=1.0):
-    import glob
     depth_l, conf_l, msf_l, chk_l, fid_l = [], [], [], [], []
     items, cid, H, W, Kref = [], 0, None, None, None
     for i, rgb, K in gen():
@@ -209,14 +209,10 @@ def main():
     model.eval()
 
     seqs = {}
-    for seq in ["MH_01_easy", "V1_02_medium", "MH_02_easy",
-                "V1_01_easy", "V2_01_easy",
-                "MH_03_medium", "MH_04_difficult", "MH_05_difficult",
-                "V1_03_difficult", "V2_02_medium", "V2_03_difficult"]:
+    for seq in EUROC11:
         files, K, gen = euroc_frames(seq)
         seqs[seq] = (gen, len(files))
-    for seq in ["freiburg1_xyz", "freiburg1_desk", "freiburg2_xyz",
-                "freiburg2_desk", "freiburg3_long_office_household"]:
+    for seq in TUM5:
         rows, K, gen = tum_frames(seq)
         seqs[seq] = (gen, len(rows))
     n_k, K, gen = kitti_frames(800)
