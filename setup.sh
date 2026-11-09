@@ -11,10 +11,10 @@
 _HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 : "${PROJECT_ROOT:=$_HERE}"
-: "${HISLAM2_ROOT:=$HOME/HI-SLAM2}"
+: "${HISLAM2_ROOT:=$HOME/GR_Hi_SLAM2_extension/HI-SLAM2}"
 : "${CONDA_ROOT:=$HOME/miniconda3}"
 : "${VENV_ROOT:=$PROJECT_ROOT/.venv}"
-: "${DATA_ROOT:=$HOME/datasets}"
+: "${DATA_ROOT:=/media/gao/D/Hi-SLAM2/datasets}"
 : "${HF_HOME:=$HOME/.cache/huggingface}"
 
 # Dataset roots derive from DATA_ROOT unless set explicitly.

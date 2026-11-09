@@ -10,7 +10,7 @@ The scripts import the backend from a local checkout; nothing from it is
 redistributed here.
 
 ```bash
-git clone https://github.com/Willyzw/HI-SLAM2.git "$HISLAM2_ROOT"
+git clone --recursive https://github.com/Willyzw/HI-SLAM2.git "$HISLAM2_ROOT"
 cd "$HISLAM2_ROOT"
 git checkout 76c833c
 ```
@@ -20,7 +20,7 @@ Then create the `hislam2` conda environment and build the CUDA extensions:
 ```bash
 conda env create -f /path/to/caliprior/requirements/environment-hislam2.yaml
 conda activate hislam2
-pip install -r /path/to/caliprior/requirements/requirements-hislam2.txt
+pip install -r /path/to/caliprior/requirements/requirements-hislam2.txt --no-build-isolation
 ```
 
 The `setup.py` extensions (`droid_backends`, `lietorch_backends`) have no rpath,

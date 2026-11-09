@@ -42,6 +42,6 @@ $KITTI_GREY_ROOT/00/image_0/                grey images
 
 ## Download helpers
 
-`data/download_tum.sh`, `data/download_euroc.sh`, and `data/download_kitti.sh`
+`data/download_tum.sh`, `data/unzip_euroc.sh`, and `data/download_kitti.sh`
 fetch or document each dataset. KITTI requires registration; the helper prints
 the official page. See also `data/README.md`.

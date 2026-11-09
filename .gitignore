@@ -27,3 +27,6 @@ logs/
 .DS_Store
 .idea/
 .vscode/
+
+# Experiments planning
+project_plan/
